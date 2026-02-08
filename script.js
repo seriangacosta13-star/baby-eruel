@@ -4,8 +4,16 @@ const unlockSound = document.getElementById("unlockSound");
 const paperSound = document.getElementById("paperSound");
 const confettiSound = document.getElementById("confettiSound");
 const bgMusic = document.getElementById("bgMusic");
+const clueSound = document.getElementById("clueSound");
 
 let musicStarted = false;
+
+function playClueSound() {
+    if (!clueSound) return;
+    clueSound.currentTime = 0;
+    clueSound.volume = 0.6;
+    clueSound.play().catch(() => {});
+}
 
 function unlockAllAudio() {
     [unlockSound, paperSound, confettiSound, bgMusic].forEach(audio => {
@@ -247,6 +255,31 @@ const video = document.getElementById("giftVideo");
 const countdownEl = document.getElementById("countdown");
 const clueEl = document.getElementById("gift-clue");
 
+const clueBtn = document.getElementById("clue-btn");
+
+const clues = [
+    "💌 It is something na ",
+    "🐱 This gift has my heart in it.",
+    "🎶 It has sound… maybe more.",
+    "📹 You’ll want to replay this.",
+    "💖 It’s made just for you."
+];
+
+let clueIndex = 0;
+
+clueBtn.addEventListener("click", () => {
+    playClueSound();
+
+    clueEl.textContent = clues[clueIndex];
+    clueEl.style.animation = "none";
+    clueEl.offsetHeight; // reset animation
+    clueEl.style.animation = "fadeClue 0.4s ease";
+    clueEl.style.fontSize = "16px";
+
+    clueIndex = (clueIndex + 1) % clues.length;
+});
+
+
 video.addEventListener("play", () => {
     fadeOutMusic(1200);   // 🎵 fade out bg music
 });
@@ -263,7 +296,9 @@ video.addEventListener("ended", () => {
 let giftUnlocked = false;
 
 // TEST MODE
-const targetDate = new Date(Date.now() - 1000);
+// 🎯 SET REAL UNLOCK DATE
+const targetDate = new Date("2026-02-08T16:33:00"); // change date/time
+
 
 function updateCountdown() {
     if (giftUnlocked) return;
@@ -273,7 +308,7 @@ function updateCountdown() {
     if (diff <= 0) {
         giftUnlocked = true;
 
-        countdownEl.textContent = "Unlocked 💗";
+        countdownEl.textContent = "Unlocked";
         clueEl.textContent = "";
         videoBox.style.display = "block";
 
@@ -288,17 +323,21 @@ function updateCountdown() {
     const d = Math.floor(diff / (1000 * 60 * 60 * 24));
 
     countdownEl.textContent = `${d}d ${h}h ${m}m ${s}s`;
-    clueEl.textContent = "A clue will appear every day 💝";
+    
 }
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+        
 
 document.getElementById("back-gift-modal").addEventListener("click", e => {
     e.stopPropagation();
     video.pause();
     giftModal.style.display = "none";
     itemsScreen.style.display = "flex";
+    clueIndex = 0;
+    clueEl.textContent = "Tap for a clue";
+
 });
 
 /* ================= BACK LAYER ================= */
@@ -397,3 +436,16 @@ function stopOutroChaos() {
     clearInterval(outroGifLoop);
     outroGifLoop = null;
 }
+const introBlur = document.getElementById("intro-blur");
+
+introBlur.addEventListener("click", () => {
+    introBlur.classList.add("hide");
+
+    // unlock audio + start bg music
+    unlockAllAudio();
+    startMusic();
+
+    setTimeout(() => {
+        introBlur.style.display = "none";
+    }, 900);
+});
