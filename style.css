@@ -453,3 +453,10 @@ display: inline-block;
     border-radius: 18px;
     animation: pulse 1.5s infinite;
 }
+
+#letter-title {
+  background: rgba(255, 255, 255, 0.6); /* see-through */
+  padding: 12px 20px;
+  border-radius: 16px;
+  display: inline-block;
+}
