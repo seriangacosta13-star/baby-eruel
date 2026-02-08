@@ -10,18 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 
 </head>
+<div id="intro-blur">
+    <div class="intro-hehe">
+        Tap anywhere to begin
+    </div>
+</div>
 
 <body>
 
 <div id="back-layer"></div>
 
 <!-- ================= INTRO + BAG (NEW) ================= -->
-<div id="bag-screen">
-    <p class="intro-text">Hi, Baby Eruel!</p>
-    <p class="intro-text">You got something in your bag</p>
+    <div id="bag-screen">
+        <p class="intro-text">Hi, Baby Eruel!</p>
+        <p class="intro-text">You got something in your bag</p>
 
-    <img src="eruel-bag.png" id="bag">
-</div>
+        <img src="eruel-bag.png" id="bag">
+    </div>
 
 <div id="items-screen" style="display:none;">
     <div class="items-row">
@@ -121,9 +126,16 @@
 <div id="gift-modal" style="display:none;">
     <div class="gift-box">
         <audio id="unlockSound" src="unlock.mp3" preload="auto"></audio>
-        <h2>🎁 Mystery Gift</h2>
+        <h2>Mystery Gift</h2>
         <p id="countdown"></p>
         <p id="gift-clue"></p>
+
+        <img
+            src="clue.png"
+            id="clue-btn"
+            alt="Clue Button"
+            style="width:70px; cursor:pointer; margin-top:10px;"
+        >
 
         <div id="gift-video" style="display:none;">
             <video id="giftVideo" controls preload="metadata">
@@ -140,6 +152,8 @@
 
 <audio id="bgMusic" src="bg-music.mp3" loop></audio>
 <audio id="paperSound" src="paper.mp3"></audio>
+<audio id="clueSound" src="clue.mp3" preload="auto"></audio>
+
 
                 <div id="outro-screen" style="display:none;">
                     <div class="outro-card">
