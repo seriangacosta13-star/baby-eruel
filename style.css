@@ -414,3 +414,42 @@ display: inline-block;
 #outro-screen.show {
     pointer-events: auto;
 }
+
+#clue-btn {
+    width: 70px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: transform 0.25s ease;
+}
+
+#clue-btn:hover {
+    transform: scale(1.1);
+}
+
+#intro-blur {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    cursor: pointer;
+    transition: opacity 0.8s ease;
+}
+
+#intro-blur.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.intro-hehe {
+    font-size: 22px;
+    font-family: cursive;
+    color: #ffffff;
+    background: rgba(0,0,0,0.4);
+    padding: 14px 22px;
+    border-radius: 18px;
+    animation: pulse 1.5s infinite;
+}
