@@ -7,7 +7,8 @@ body {
     background-image: url("eruel-bg.gif");
     background-position: center;
     background-size: cover;
-    font-family: cursive;
+    font-family: 'Patrick Hand', cursive;
+
 }
 
 /* Envelope Screen */
