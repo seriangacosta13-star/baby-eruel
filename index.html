@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine Letter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div id="back-layer"></div>
+
+<!-- ================= INTRO + BAG (NEW) ================= -->
+<div id="bag-screen">
+    <p class="intro-text">Hi, Baby Eruel!</p>
+    <p class="intro-text">You got something in your bag</p>
+
+    <img src="eruel-bag.png" id="bag">
+</div>
+
+<div id="items-screen" style="display:none;">
+    <div class="items-row">
+        <div class="mystery-item" data-item="invitation">
+            <img src="invite.png">
+        </div>
+
+        <div class="mystery-item" data-item="letter">
+            <img src="letter.png">
+        </div>
+
+        <div class="mystery-item" data-item="gift">
+            <img src="gift.png">
+        </div>
+    </div>
+
+    <button id="outro-btn" class="outro-btn" style="display:none;">
+        Click here 💗
+    </button>
+</div>
+
+
+
+<!-- OUTRO SCREEN -->
+<div id="outro-screen">
+    <div class="outro-content">
+        <h1>Thank you for exploring 💌</h1>
+        <p>I made this just for you!</p>
+        <span>💖</span>
+    </div>
+</div>
+
+</div>
+
+<!-- ================= ENVELOPE SCREEN (ORIGINAL) ================= -->
+<div id="envelope-container" style="display:none;">
+    <img src="envelope.png" alt="Envelope" id="envelope" />
+    <p>💗Hi, Baby Eruel!💗</p>
+</div>
+
+<div id="letter-container">
+    <div class="letter-window">
+        <h1 id="letter-title">Will you be my Valentine?</h1>
+
+        <img src="cat_heart.gif" class="cat" id="letter-cat" />
+
+        <div class="buttons" id="letter-buttons">
+            <img src="yes.png" class="btn yes-btn" alt="Yes" />
+            <div class="no-wrapper">
+                <img src="no.png" class="btn no-btn" alt="No" />
+            </div>
+        </div>
+
+        <audio id="confettiSound" src="confetti.mp3"></audio>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+        <p id="final-text" class="final-text" style="display:none;">
+            <strong>Valentine Date:</strong> UPLB Feb Fair
+        </p>
+        <button id="back-to-items-final" class="back-btn" style="display:none;">
+            ← Back
+        </button>
+
+    </div>
+</div>
+
+<!-- ================= LETTER MODAL ================= -->
+<div id="letter-modal" class="modal" style="display:none;">
+    <div class="letter-paper">
+        <audio id="unlockSound" src="unlock.mp3" preload="auto"></audio>
+        <h2>💌 My Letter</h2>
+
+        <div class="letter-content">
+            <p>
+                Hi baby,
+                <br><br>
+                Hi, baby! i love you so much!
+                try ko muna HEHEHEHEHEHEH
+                ang angas HAHAHAHAHAHA I LOVE YOU SO much
+                I LOVE YOU
+                I LOVE YOU
+                <br><br>
+                WALANG KATAPUSANG PAGMAMAHAL
+                <br><br>
+                Love,
+                <br>
+                Me 💗
+            </p>
+            <button id="back-letter-modal" class="back-btn">
+                ← Back
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ================= GIFT MODAL (NEW) ================= -->
+<div id="gift-modal" style="display:none;">
+    <div class="gift-box">
+        <audio id="unlockSound" src="unlock.mp3" preload="auto"></audio>
+        <h2>🎁 Mystery Gift</h2>
+        <p id="countdown"></p>
+        <p id="gift-clue"></p>
+
+        <div id="gift-video" style="display:none;">
+            <video id="giftVideo" controls preload="metadata">
+                <source src="kyle-vid.mp4" type="video/mp4">
+            </video>
+
+            <a href="kyle-vid.mp4" download>you can download it po! hehe 💝</a>
+                    <button id="back-gift-modal" class="back-btn">
+                        ← Back
+                    </button>   
+        </div>
+    </div>
+</div>
+
+<audio id="bgMusic" src="bg-music.mp3" loop></audio>
+<audio id="paperSound" src="paper.mp3"></audio>
+
+                <div id="outro-screen" style="display:none;">
+                    <div class="outro-card">
+                        <h2>I love you so much, baby!</h2>
+                        <p>💗💗💗💗💗💗💗</p>
+                    </div>
+                    <div id="outro-gifs"></div>
+                </div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
