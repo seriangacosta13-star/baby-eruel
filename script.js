@@ -297,7 +297,7 @@ let giftUnlocked = false;
 
 // TEST MODE
 // 🎯 SET REAL UNLOCK DATE
-const targetDate = new Date("2026-02-11T21:05:00"); // change date/time
+const targetDate = new Date("2026-02-11T21:20:00"); // change date/time
 
 
 function updateCountdown() {
