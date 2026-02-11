@@ -7,6 +7,8 @@ const bgMusic = document.getElementById("bgMusic");
 const clueSound = document.getElementById("clueSound");
 
 let musicStarted = false;
+let giftFullyUnlocked = false;
+
 
 function playClueSound() {
     if (!clueSound) return;
@@ -297,7 +299,7 @@ let giftUnlocked = false;
 
 // TEST MODE
 // 🎯 SET REAL UNLOCK DATE
-const targetDate = new Date("2026-02-11T21:40:00"); // change date/time
+const targetDate = new Date("2026-02-20T00:00:00"); // change date/time
 
 
 function updateCountdown() {
@@ -307,6 +309,8 @@ function updateCountdown() {
 
     if (diff <= 0) {
         giftUnlocked = true;
+        giftFullyUnlocked = true;
+
 
         countdownEl.textContent = "Unlocked";
         clueEl.textContent = "";
@@ -372,12 +376,18 @@ outroBtn.addEventListener("click", () => {
 });
 
 function maybeShowOutro() {
-    if (openedItems.size === 3 && !lastItemExited) {
+    if (
+        openedItems.has("invitation") &&
+        openedItems.has("letter") &&
+        giftFullyUnlocked &&
+        !lastItemExited
+    ) {
         lastItemExited = true;
         outroBtn.style.display = "block";
         outroBtn.classList.add("pop-in");
     }
 }
+
 document.getElementById("back-letter-modal").addEventListener("click", () => {
     letterModal.style.display = "none";
     itemsScreen.style.display = "flex";
