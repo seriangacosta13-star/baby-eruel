@@ -460,3 +460,12 @@ display: inline-block;
   border-radius: 16px;
   display: inline-block;
 }
+
+#gift-modal .gift-box {
+    text-align: center;
+}
+
+#back-gift-modal {
+    display: block;
+    margin: 20px auto 0 auto;
+}
