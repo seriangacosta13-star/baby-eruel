@@ -258,11 +258,11 @@ const clueEl = document.getElementById("gift-clue");
 const clueBtn = document.getElementById("clue-btn");
 
 const clues = [
-    "💌 It is something na ",
-    "🐱 This gift has my heart in it.",
-    "🎶 It has sound… maybe more.",
-    "📹 You’ll want to replay this.",
-    "💖 It’s made just for you."
+    "pwede mo siyang magustohan or hindi HAHAHAHA",
+    "cute hehehehe",
+    "my https://youtu.be/nQJEp-k-ogs?list=RDnQJEp-k-ogs",
+    "436",
+    "kapag tinanong mo ko, hindi kita sasagutin HAHAHAHAHAHAHA"
 ];
 
 let clueIndex = 0;
@@ -297,7 +297,7 @@ let giftUnlocked = false;
 
 // TEST MODE
 // 🎯 SET REAL UNLOCK DATE
-const targetDate = new Date("2026-02-08T16:33:00"); // change date/time
+const targetDate = new Date("2026-02-11T20:25:00"); // change date/time
 
 
 function updateCountdown() {
